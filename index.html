@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- SEO Meta Tags -->
+    <title>Jasmine Field Orchestra (JFO) | UIUC Student Music Organization</title>
+    <meta content="Discover the Jasmine Field Orchestra (JFO) at UIUC, a student-led music community. We unite diverse talents in genres from classical and traditional Chinese music to pop/rock. Join us to share your passion for music!"
+          name="description">
+    <meta content="Jasmine Field Orchestra, JFO, UIUC, University of Illinois, student orchestra, college music, orchestra, choir, pop/rock band, Chinese music, student organization"
+          name="keywords">
+    <meta content="Jasmine Field Orchestra" name="author">
+    <link href="https://jfouiuc.com/" rel="canonical">
+
+    <!-- Open Graph / Facebook -->
+    <meta content="website" property="og:type">
+    <meta content="https://jfouiuc.com/" property="og:url">
+    <meta content="Jasmine Field Orchestra (JFO) | UIUC Student Music Organization" property="og:title">
+    <meta content="A vibrant, student-led music community at the University of Illinois Urbana-Champaign, celebrating a fusion of musical genres and cultures."
+          property="og:description">
+    <meta content="https://jfouiuc.com/assets/images/logo-square.png"
+          property="og:image">
+
+    <!-- Twitter -->
+    <meta content="summary_large_image" property="twitter:card">
+    <meta content="https://jfouiuc.com/" property="twitter:url">
+    <meta content="Jasmine Field Orchestra (JFO) | UIUC Student Music Organization" property="twitter:title">
+    <meta content="A vibrant, student-led music community at the University of Illinois Urbana-Champaign, celebrating a fusion of musical genres and cultures."
+          property="twitter:description">
+    <meta content="https://jfouiuc.com/assets/images/logo-square.png"
+          property="twitter:image">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;500&display=swap"
+          rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href="assets/images/cropped-jfo-favicon-32x32.png"
+          rel="icon"
+          sizes="32x32">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+
+        h1 {
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        /* Custom Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-down {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .fade-in-up-delay {
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* Style for scrolled header */
+        .header-scrolled {
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+<!-- Header & Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="header">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a class="text-2xl font-bold" href="index.html">
+            <img alt="JFO Logo"
+                 class="h-10 transition-transform duration-300 hover:scale-105"
+                 src="assets/images/full-logo-h-white-colored.png">
+        </a>
+        <div class="hidden xl:flex items-center space-x-8 text-lg">
+            <a class="flex items-center space-x-2 text-pink-400 transition-colors" href="index.html">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                </svg>
+                <span>Home</span>
+            </a>
+            <a class="flex items-center space-x-2 hover:text-pink-400 transition-colors" href="about.html">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                          fill-rule="evenodd"/>
+                </svg>
+                <span>About</span>
+            </a>
+            <a class="flex items-center space-x-2 hover:text-pink-400 transition-colors"
+               href="https://news.jfouiuc.com/" rel="noopener noreferrer"
+               target="_blank">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                          d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3 1h10a1 1 0 010 2H5a1 1 0 010-2zm0 4h10a1 1 0 010 2H5a1 1 0 010-2zm0 4h6a1 1 0 010 2H5a1 1 0 010-2z"
+                          fill-rule="evenodd"/>
+                </svg>
+                <span>News & Announcements</span>
+            </a>
+        </div>
+        <button class="xl:hidden text-2xl z-50" id="mobile-menu-button">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </svg>
+        </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="hidden xl:hidden bg-gray-800" id="mobile-menu">
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700 text-pink-400" href="index.html">Home</a>
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700" href="about.html">About</a>
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700" href="https://news.jfouiuc.com/" rel="noopener noreferrer"
+           target="_blank">News & Announcements</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center overflow-hidden" id="home">
+        <video autoplay class="video-bg" loop muted>
+            <source src="assets/videos/JFOWebBG_Mini.mp4" type="video/mp4">
+            <source src="assets/videos/JFOWebBG.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="z-10 p-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white fade-in-down">Jasmine Field Orchestra</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 fade-in-up">Harmonizing Cultures, Uniting Passions</p>
+            <a class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 inline-block fade-in-up-delay"
+               href="about.html">Learn
+                More</a>
+            <!-- Social Media Links -->
+            <div class="mt-8 flex justify-center space-x-6 fade-in-up-delay">
+                <a class="text-gray-300 hover:text-white transition-transform duration-300 hover:scale-110"
+                   href="https://www.instagram.com/jfouiuc" rel="noopener noreferrer"
+                   target="_blank">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/>
+                    </svg>
+                </a>
+                <a class="text-gray-300 hover:text-white transition-transform duration-300 hover:scale-110"
+                   href="https://www.youtube.com/@jfouiuc" rel="noopener noreferrer"
+                   target="_blank">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21.58 7.19c-.23-.86-.9-1.52-1.76-1.75C18.25 5 12 5 12 5s-6.25 0-7.82.44c-.86.23-1.52.89-1.75 1.75C2 8.76 2 12 2 12s0 3.24.43 4.81c.23.86.89 1.52 1.75 1.75C5.75 19 12 19 12 19s6.25 0 7.82-.44c.86-.23 1.52-.89 1.75-1.75C22 15.24 22 12 22 12s0-3.24-.42-4.81zM9.5 15.5V8.5l6.5 3.5-6.5 3.5z"/>
+                    </svg>
+                </a>
+                <a class="text-gray-300 hover:text-white transition-transform duration-300 hover:scale-110"
+                   href="https://www.facebook.com/jfouiuc" rel="noopener noreferrer"
+                   target="_blank">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.32 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 12 2.04Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-20 bg-gray-800" id="about">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">About JFO</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-300">
+                Founded in 2012 at the University of Illinois Urbana-Champaign, the Jasmine Field Orchestra (JFO) is a
+                vibrant, student-led music community. We are built on a foundation of inclusivity and a shared passion
+                for music, connecting diverse cultures and people. Our mission is to provide a comprehensive platform
+                for musical exploration, cultural exchange, and personal growth.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Music Divisions Section -->
+    <section class="py-20" id="music">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Music Divisions</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-gray-700">
+                    <h3 class="text-2xl font-bold mb-2 text-pink-400">Symphony Orchestra</h3>
+                    <p class="text-gray-400">Exploring the richness of the symphonic world, from classical masterpieces
+                        to contemporary works.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-gray-700">
+                    <h3 class="text-2xl font-bold mb-2 text-pink-400">Chinese Folk Music</h3>
+                    <p class="text-gray-400">Showcasing the enchanting melodies and unique charm of traditional Chinese
+                        instruments.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-gray-700">
+                    <h3 class="text-2xl font-bold mb-2 text-pink-400">Choir</h3>
+                    <p class="text-gray-400">Celebrating the power of collective voices through intricate and moving
+                        choral arrangements.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-gray-700">
+                    <h3 class="text-2xl font-bold mb-2 text-pink-400">Live Bands Division</h3>
+                    <p class="text-gray-400">Feeling the pulse of modern music with high-energy pop, rock, and
+                        contemporary performances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="py-20 bg-gray-800" id="join">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">Become a Part of Our Symphony</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-300 mb-8">
+                JFO welcomes all students with a passion for music, regardless of experience. If you're ready to share
+                your musical journey, we invite you to join our family. Our application process is open throughout the
+                year.
+            </p>
+            <a class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+               href="mailto:hello@jfouiuc.com">Contact
+                Us to Join</a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-black py-10">
+    <div class="container mx-auto px-6 text-center text-gray-400">
+        <p class="mb-4">COPYRIGHT © 2012 - 2024 JFO. ALL RIGHTS RESERVED.</p>
+        <p>Email: <a class="hover:text-pink-400" href="mailto:hello@jfouiuc.com">hello@jfouiuc.com</a></p>
+    </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button')
+  const mobileMenu = document.getElementById('mobile-menu')
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden')
+  })
+
+  // Close mobile menu when a link is clicked
+  const mobileMenuLinks = mobileMenu.querySelectorAll('#mobile-menu a')
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden')
+    })
+  })
+
+  // Change header background on scroll
+  const header = document.getElementById('header')
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('header-scrolled')
+    } else {
+      header.classList.remove('header-scrolled')
+    }
+  })
+</script>
+</body>
+</html>
