@@ -10,6 +10,7 @@
     <meta content="JFO charter, Jasmine Field Orchestra governance, UIUC student organization charter" name="keywords">
     <meta content="Jasmine Field Orchestra" name="author">
     <link href="https://jfouiuc.org/charter.html" rel="canonical">
+    <meta content="index, follow" name="robots">
 
     <!-- Open Graph / Facebook -->
     <meta content="article" property="og:type">
@@ -19,19 +20,35 @@
     <meta content="https://jfouiuc.org/assets/images/logo-square.png" property="og:image">
 
     <!-- Twitter -->
-    <meta content="summary_large_image" property="twitter:card">
-    <meta content="https://jfouiuc.org/charter.html" property="twitter:url">
-    <meta content="The Jasmine Field Orchestra Charter | Governance Document" property="twitter:title">
-    <meta content="Read the official governance charter of the Jasmine Field Orchestra (JFO)." property="twitter:description">
-    <meta content="https://jfouiuc.org/assets/images/logo-square.png" property="twitter:image">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="https://jfouiuc.org/charter.html" name="twitter:url">
+    <meta content="The Jasmine Field Orchestra Charter | Governance Document" name="twitter:title">
+    <meta content="Read the official governance charter of the Jasmine Field Orchestra (JFO)." name="twitter:description">
+    <meta content="https://jfouiuc.org/assets/images/logo-square.png" name="twitter:image">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="assets/css/tailwind.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "The Jasmine Field Orchestra Charter",
+        "url": "https://jfouiuc.org/charter.html",
+        "description": "The official governance charter of the Jasmine Field Orchestra at UIUC.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Jasmine Field Orchestra",
+            "url": "https://jfouiuc.org/"
+        }
+    }
+    </script>
 
     <!-- Favicon -->
     <link href="assets/images/cropped-jfo-favicon-32x32.png" rel="icon" sizes="32x32">
@@ -51,14 +68,45 @@
             background-color: rgba(17, 24, 39, 0.8);
             backdrop-filter: blur(10px);
         }
+
+        /* Charter-specific styles */
+        .charter-list li {
+            padding-left: 0.25rem;
+        }
+
+        .charter-list li::marker {
+            color: rgb(244, 114, 182);
+        }
+
+        .formula-box {
+            background-color: rgba(244, 114, 182, 0.08);
+            border-left: 3px solid rgb(244, 114, 182);
+        }
+
+        .example-box {
+            background-color: rgba(156, 163, 175, 0.08);
+            border-left: 3px solid rgb(156, 163, 175);
+        }
+
+        .toc-link {
+            transition: color 0.15s;
+        }
+
+        .toc-link:hover {
+            color: rgb(244, 114, 182);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
 
+<!-- Skip to Content (Accessibility) -->
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-500 focus:text-white focus:py-2 focus:px-4 focus:rounded"
+   href="#main-content">Skip to content</a>
+
 <!-- Header & Navigation -->
 <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="header">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a class="text-2xl font-bold" href="/">
+        <a class="text-2xl font-bold" href="index.html">
             <img alt="JFO Logo" class="h-10 transition-transform duration-300 hover:scale-105" src="assets/images/full-logo-h-white-colored.png">
         </a>
         <div class="hidden xl:flex items-center space-x-8 text-lg">
@@ -83,292 +131,428 @@
         </div>
         <button class="xl:hidden text-2xl z-50" id="mobile-menu-button">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
             </svg>
         </button>
     </nav>
-    <div class="xl:hidden hidden bg-gray-900" id="mobile-menu">
-        <a class="block py-2 px-4 hover:bg-gray-700" href="index.html">Home</a>
-        <a class="block py-2 px-4 hover:bg-gray-700" href="about.html">About</a>
-        <a class="block py-2 px-4 hover:bg-gray-700" href="https://news.jfouiuc.org/" target="_blank" rel="noopener noreferrer">News & Announcements</a>
+    <!-- Mobile Menu -->
+    <div class="hidden xl:hidden bg-gray-800" id="mobile-menu">
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700" href="index.html">Home</a>
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700" href="about.html">About</a>
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700" href="https://news.jfouiuc.org/" target="_blank" rel="noopener noreferrer">News & Announcements</a>
     </div>
 </header>
 
-<main class="pt-24">
+<main id="main-content" class="pt-24">
+    <!-- Page Header -->
     <section class="py-20 bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl font-bold text-center mb-4">The Jasmine Field Orchestra Charter</h1>
-            <p class="text-center text-gray-300">Version: v1.0.0<br>Author: Tony An<br>Reviewers:<br>Date: Sep 4, 2025<br>Last Revision: Sep 4, 2025</p>
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">The Jasmine Field Orchestra Charter</h1>
+            <div class="inline-block bg-gray-900 rounded-lg px-8 py-4 text-sm text-gray-300">
+                <div class="grid grid-cols-2 gap-x-8 gap-y-1 text-left">
+                    <span class="text-gray-400">Version</span><span>v1.0.0</span>
+                    <span class="text-gray-400">Author</span><span>Tony An</span>
+                    <span class="text-gray-400">Date</span><span>Sep 4, 2025</span>
+                    <span class="text-gray-400">Last Revision</span><span>Sep 4, 2025</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Preamble</h2>
-            <p>This document, The Jasmine Field Orchestra Charter, constitutes the foundational and primary governing agreement for the organization. It serves as the binding agreement between the Jasmine Field Orchestra at the University of Illinois Urbana-Champaign (hereafter "JFO") and its members. It outlines the organization's purpose, structure, principles of membership, financial framework, and the shared standards of conduct that enable a collaborative, respectful, and artistically vibrant environment for all. Adherence to this Charter is a condition of membership and is essential for the operational stability, financial health, and collective success of the organization.</p>
-        </div>
-    </section>
+    <div class="container mx-auto px-6 max-w-4xl">
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article I: Foundational Principles</h2>
-            <p>This section establishes the core identity and guiding philosophy of JFO. It links the organization's artistic ambitions to the non-negotiable standards of the university community, framing compliance not as a bureaucratic hurdle, but as a strategic imperative for fostering a healthy and creative environment.</p>
-            <h3 class="text-xl font-bold">1.1 Mission Statement</h3>
-            <p>The mission of JFO is to provide a vibrant, cross-cultural platform for University of Illinois Urbana-Champaign students and affiliated community members to create, perform, and share music. The organization is dedicated to fostering collaboration, community, and artistic growth across a diverse spectrum of musical genres, including but not limited to pop/rock, jazz, orchestral, choral, and folk traditions.</p>
-            <h3 class="text-xl font-bold">1.2 Vision Statement</h3>
-            <p>JFO aspires to be the premier home for musicians at UIUC, recognized for its artistic excellence, its inclusive and supportive community, and its sustainable, transparent, and member-driven operational structure.</p>
-            <h3 class="text-xl font-bold">1.3 Core Values</h3>
-            <p>The following values guide the decisions and actions of the organization and its members:</p>
-            <p>Collaboration: We believe our greatest strength comes from the fusion of different musical traditions and the shared efforts of our members across all divisions.<br>
-Passion: We are driven by a shared love for music that fuels our creativity, dedication, and pursuit of excellence.<br>
-Inclusivity: We are fundamentally committed to creating a welcoming and equitable environment for all members, ensuring that every individual feels valued and has the opportunity to contribute.<br>
-Accountability: We operate with transparency and take collective ownership of our responsibilities to the organization, the university community, and each other.</p>
-            <h3 class="text-xl font-bold">1.4 Statement of Nondiscrimination</h3>
-            <p>JFO explicitly adopts and adheres to the University of Illinois's nondiscrimination policy as a cornerstone of its identity. As a condition of its status as a Registered Student Organization (RSO), membership and participation in JFO must be open to all currently enrolled University of Illinois Urbana-Champaign students, without regard to actual or perceived race, color, religion, sex, national origin, ancestry, age, disability, sexual orientation, gender identity, gender expression, marital status, or any other status protected by applicable law or university policy.</p>
-            <p>This commitment is not merely a compliance requirement; it is a prerequisite for achieving our artistic mission. The internal friction and factionalism that have hindered the organization in the past are antithetical to the principles of open collaboration. A community cannot be truly collaborative or artistically vibrant if it is not also fundamentally inclusive and fair. By embedding the university's non-discrimination policy into our foundational principles, JFO affirms that a respectful and equitable environment is the bedrock upon which great music is made.</p>
-        </div>
-    </section>
+        <!-- Table of Contents -->
+        <nav class="py-10 border-b border-gray-700" aria-label="Table of Contents">
+            <h2 class="text-2xl font-bold mb-4">Table of Contents</h2>
+            <ol class="list-decimal list-inside space-y-2 text-gray-300">
+                <li><a class="toc-link" href="#preamble">Preamble</a></li>
+                <li><a class="toc-link" href="#article-i">Foundational Principles</a></li>
+                <li><a class="toc-link" href="#article-ii">Organizational Structure</a></li>
+                <li><a class="toc-link" href="#article-iii">Membership</a></li>
+                <li><a class="toc-link" href="#article-iv">Governance &amp; Leadership</a></li>
+                <li><a class="toc-link" href="#article-v">The "JFO as a Platform" Financial Framework</a></li>
+                <li><a class="toc-link" href="#article-vi">Asset &amp; Equipment Management Protocol</a></li>
+                <li><a class="toc-link" href="#article-vii">Code of Conduct</a></li>
+                <li><a class="toc-link" href="#article-viii">Conflict Resolution &amp; Disciplinary Procedures</a></li>
+                <li><a class="toc-link" href="#article-ix">Official Procedures &amp; Workflows</a></li>
+                <li><a class="toc-link" href="#article-x">Amendments</a></li>
+            </ol>
+        </nav>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article II: Organizational Structure</h2>
-            <h3 class="text-xl font-bold">2.1 Overview</h3>
-            <p>JFO is a unified organization composed of two core structures that work in parallel: Music Divisions and the Management Team. All individuals within these structures are considered members of JFO, contributing to the organization's artistic and operational success.</p>
-            <h3 class="text-xl font-bold">2.2 Music Divisions</h3>
-            <p>The Music Divisions are the primary artistic arms of the organization. Each division is dedicated to a specific genre or style of music, responsible for its own rehearsals, performances, and artistic development.</p>
-            <h3 class="text-xl font-bold">2.3 Management Team</h3>
-            <p>The Management Team is the operational arm of the organization, responsible for the administration, promotion, and logistical functions that support all of JFO's activities. The Management Team is composed of various specialized sub-teams and roles that handle functions such as finance, marketing, event production, and membership services.</p>
-        </div>
-    </section>
+        <!-- Preamble -->
+        <section class="py-10 border-b border-gray-700" id="preamble">
+            <h2 class="text-2xl font-bold mb-4">Preamble</h2>
+            <p class="text-gray-300 leading-relaxed">This document, The Jasmine Field Orchestra Charter, constitutes the foundational and primary governing agreement for the organization. It serves as the binding agreement between the Jasmine Field Orchestra at the University of Illinois Urbana-Champaign (hereafter "JFO") and its members. It outlines the organization's purpose, structure, principles of membership, financial framework, and the shared standards of conduct that enable a collaborative, respectful, and artistically vibrant environment for all. Adherence to this Charter is a condition of membership and is essential for the operational stability, financial health, and collective success of the organization.</p>
+        </section>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article III: Membership</h2>
-            <p>This section defines the relationship between the individual member and the organization, emphasizing voluntary investment, clear expectations, and shared ownership.</p>
-            <h3 class="text-xl font-bold">3.1 Eligibility</h3>
-            <p>Membership in JFO is open to two primary groups:<br>
-Student Members: All currently enrolled students at the University of Illinois Urbana-Champaign campus are eligible to join as Student Members.<br>
-Community Members: Individuals who are not currently enrolled students but have a past or present affiliation with the University of Illinois (e.g., alumni, staff, faculty) may join as Community Members, provided they pay all applicable membership dues.</p>
-            <h3 class="text-xl font-bold">3.2 Membership Classes</h3>
-            <p>Divisional Member: A member (student or community) who is an active musician within one or more Music Divisions.<br>
-Management Team Member: A member (student or community) who serves in a role on the Management Team.<br>
-A member may hold roles as both a Divisional Member and a Management Team Member simultaneously.</p>
-            <h3 class="text-xl font-bold">3.3 Path to Membership</h3>
-            <p>An eligible individual may become a member of JFO through one of two pathways:<br>
-Music Divisions: Recruitment for Music Divisions occurs on a seasonal or semesterly basis through auditions or general interest meetings as determined by each division's leadership.<br>
-Management Team: Recruitment for the Management Team is open year-round on a rolling basis. Interested individuals may apply for open positions, and applications are reviewed by the relevant team leaders.<br>
-Upon acceptance, all prospective members must complete the official JFO Membership Registration Form and pay all applicable dues by the specified deadline.</p>
-            <h3 class="text-xl font-bold">3.4 Rights of Members in Good Standing</h3>
-            <p>The act of paying dues is an investment in the JFO community. In return, all members in good standing are afforded the following rights:<br>
-The right to participate fully in their respective division's or team's activities.<br>
-The right for Student Members to vote in all JFO general elections and in all elections specific to their division or team.<br>
-The right for Student Members to seek and hold leadership positions within the organization.<br>
-The right to utilize JFO-owned equipment and facilities according to the protocols outlined in Article VI.<br>
-The right to access transparent financial information for their specific division and to propose ideas and budget items to their respective leadership.</p>
-            <h3 class="text-xl font-bold">3.5 Responsibilities & Maintaining Good Standing</h3>
-            <p>A member is considered to be in "good standing" when they have fulfilled the following obligations for the current academic semester:<br>
-Paid all required JFO and Divisional/Team dues in full.<br>
-Consistently adhered to the JFO Code of Conduct as detailed in Article VII.<br>
-Met any reasonable, division- or team-specific attendance or participation requirements.<br>
-Actively supported the organization's commitments to its sponsors. This includes, but is not limited to, fulfilling reasonable requests such as sharing promotional materials on social media. All Management Team members are required to lead and participate in these efforts to ensure sponsor conditions are met.<br>
-Abided by all applicable University of Illinois policies and the Student Code.</p>
-            <h3 class="text-xl font-bold">3.6 Dues and Fees</h3>
-            <p>Membership dues are collected directly by each Music Division at the beginning of each semester. A portion of these collected dues is then submitted to the JFO General Fund as calculated by the formula in Article V.</p>
-            <h3 class="text-xl font-bold">3.7 Non-Refundability of Dues</h3>
-            <p>Once paid, all membership fees and dues are non-refundable at all times and under all circumstances.</p>
-            <h3 class="text-xl font-bold">3.8 Voluntary Withdrawal</h3>
-            <p>A member may voluntarily withdraw from the organization at any time by providing written notice to the HR Team. No refund of dues will be issued upon withdrawal.</p>
-        </div>
-    </section>
+        <!-- Article I -->
+        <section class="py-10 border-b border-gray-700" id="article-i">
+            <h2 class="text-2xl font-bold mb-4">Article I: Foundational Principles</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">This section establishes the core identity and guiding philosophy of JFO. It links the organization's artistic ambitions to the non-negotiable standards of the university community, framing compliance not as a bureaucratic hurdle, but as a strategic imperative for fostering a healthy and creative environment.</p>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article IV: Governance & Leadership</h2>
-            <p>This section establishes a formal leadership structure that complies with university requirements for RSOs and is designed to effectively administer the organization.</p>
-            <h3 class="text-xl font-bold">4.1 Governing Body</h3>
-            <p>The primary governing and administrative body of JFO shall be the Executive Board.</p>
-            <h3 class="text-xl font-bold">4.2 Executive Board Composition</h3>
-            <p>The Executive Board shall be composed of the leaders of the organization's primary management teams. The board consists of the following officers, who must be currently enrolled students:<br>
-President's Team: President & Vice President<br>
-Finance Team: Treasurer<br>
-HR Team: Membership Director<br>
-Events Team: Event Director</p>
-            <h3 class="text-xl font-bold">4.3 Duties of Executive Officers</h3>
-            <p>President (Primary Executive Officer): Serves as the chief executive and official representative of JFO. Presides over all Executive Board and general meetings, provides strategic direction, co-signs major financial requests, and ensures the organization operates in accordance with this Charter.<br>
-Vice President (Primary Operations Officer): Oversees the operational logistics of the organization, including the administration of the Asset & Equipment Management Protocol (Article VI). Maintains the master JFO Asset Inventory Log and administers the Conflict Resolution Pathway.<br>
-Treasurer (Finance Team Lead): The chief financial administrator of the JFO financial framework. Manages all organizational funds across both the SOFC and external bank accounts, prepares the annual budget for the JFO General Fund, delivers financial reports, oversees Central Fund contributions, and processes payment requests.<br>
-Membership Director (HR Team Lead): Manages all aspects of member recruitment, registration, and retention. Maintains the official roster of members in good standing, verifies member eligibility, records and distributes the minutes of all meetings, and manages official communication channels.<br>
-Event Director (Events Team Lead): Oversees the planning, coordination, and execution of all major JFO events, both divisional and organization-wide. Serves as the chairperson of the event planning committee, manages event registration workflows, and coordinates with divisional leaders and the Vice President on logistical needs.</p>
-            <h3 class="text-xl font-bold">4.4 Divisional Leadership</h3>
-            <p>Each Music Division shall elect or appoint its own leadership, which must include at least a Director and Vice Manager. These leaders are responsible for the day-to-day management of their respective unit, including setting artistic direction, managing their budget, and communicating with their members.</p>
-            <h3 class="text-xl font-bold">4.5 Elections</h3>
-            <p>Elections for the Executive Board shall be held annually during the spring semester. Any Student Member in good standing is eligible to run. Elections shall be conducted by secret ballot, and results will be determined by a simple majority of votes cast.</p>
-            <h3 class="text-xl font-bold">4.6 Removal of Officers</h3>
-            <p>An officer may be removed for just cause, including gross negligence of duties or violations of the Code of Conduct. The process requires a petition signed by at least 20% of the student membership, followed by a special meeting where the officer has the right to be heard. Removal requires a two-thirds majority vote of the student members present.</p>
-        </div>
-    </section>
+            <h3 class="text-xl font-bold mb-3 text-pink-400">1.1 Mission Statement</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">The mission of JFO is to provide a vibrant, cross-cultural platform for University of Illinois Urbana-Champaign students and affiliated community members to create, perform, and share music. The organization is dedicated to fostering collaboration, community, and artistic growth across a diverse spectrum of musical genres, including but not limited to pop/rock, jazz, orchestral, choral, and folk traditions.</p>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article V: The "JFO as a Platform" Financial Framework</h2>
-            <p>This section codifies the organization's financial model, which is designed to provide divisional autonomy while ensuring collective stability and compliance with UIUC financial policies.</p>
-            <h3 class="text-xl font-bold">5.1 Financial Accounts</h3>
-            <p>JFO maintains two separate physical financial accounts to manage its funds:<br>
-The Student Organization Finance Center (SOFC) Account: This university-administered account is used exclusively for transactions involving the university. This includes receiving funding from university sources (like SORF) and paying for on-campus services such as venue rentals. This account is not used for general operations or as the JFO General Fund.<br>
-The JFO External Bank Account: This is the primary financial account for the organization, held at an external financial institution. All membership dues, performance revenue, sponsorships, and other non-university income are deposited here. All general operational expenses are paid from this account.</p>
-            <h3 class="text-xl font-bold">5.2 Principle of Divisional Financial Autonomy</h3>
-            <p>Each primary musical division within JFO will operate with financial independence. All revenue generated from a division's specific activities will be directly deposited into The JFO External Bank Account. This revenue will then be logged in that division's individual logical account after calculation. The leadership of each division holds the authority to approve expenditures from their respective logical account.</p>
-            <h3 class="text-xl font-bold">5.3 Divisional Accounts</h3>
-            <p>The JFO Treasurer will maintain logically separate accounts within the JFO External Bank Account for its two primary musical arms:<br>
-The Cadence Account: For the Live Bands division.<br>
-The Harmony Account: For the Orchestra divisions, including the Symphony Orchestra, Chinese Folk Music ensemble, and Choir.</p>
-            <h3 class="text-xl font-bold">5.4 The JFO General Fund</h3>
-            <p>To support shared infrastructure and services, JFO will maintain a General Fund within the external bank account. This fund is a dedicated budget for essential, organization-wide costs and is composed of two parts:<br>
-The Operating Budget: Covers predictable, recurring costs such as shared storage, website hosting, general marketing, and maintenance of JFO Central Property.<br>
-The Contingency & Growth Fund: The organization's savings account, designed to cover unexpected financial emergencies and provide strategic co-sponsorship for major, cross-divisional events.</p>
-            <h3 class="text-xl font-bold">5.5 General Fund Contribution Mechanism</h3>
-            <p>To ensure fairness and sustainability, contributions to the JFO General Fund are made from each instance of revenue generation. This "platform fee" model uses different calculations for membership dues versus other revenue to ensure the contribution is equitable and logical for the type of income received.</p>
-            <p>A. Contribution from Membership Dues<br>
-The contribution from semesterly membership dues is calculated using a hybrid formula that combines a per-member fee with a percentage of total dues collected.<br>
-Dues Contribution Formula: Dues Contribution = (Number of Members × Per-Member Fee) + (Total Dues Collected × Platform Percentage)<br>
-Formula Components & Default Base Rates:<br>
-Per-Member Fee: A fixed dollar amount for each dues-paying member. The default base rate is $5.00 per member.<br>
-Platform Percentage: A fixed percentage of the total dues collected by the division. The default base rate is 15%.</p>
-            <p>Example Calculation (Membership Dues):<br>
-Situation: The Cadence division has 30 members paying $50 each.<br>
-Calculation:<br>
-Total Dues Collected: 30 members × $50 = $1,500<br>
-Per-Member Portion: 30 members × $5.00 = $150<br>
-Platform Percentage Portion: $1,500 × 0.15 = $225<br>
-Total Cadence Contribution: $150 + $225 = $375</p>
-            <p>B. Contribution from Performance & Event Revenue<br>
-The contribution from other revenue sources, such as commercial shows or ticketed concerts, is calculated based on the gross revenue of the event plus a levy for the use of high-value shared assets.<br>
-Event Contribution Formula: Event Contribution = (Gross Event Revenue × Performance Percentage) + High-Impact Asset Levy (HIAL)<br>
-Formula Components & Default Base Rates:<br>
-Performance Percentage: A fixed percentage of the gross revenue from the event. The default base rate is 15%.<br>
-High-Impact Asset Levy (HIAL): A tiered, fixed fee applied only when the event requires the use of designated JFO Central Property. The default HIAL tiers are:<br>
-Tier 1: $25.00 (Use of the shared drum kit OR the portable mixing board)<br>
-Tier 2: $50.00 (Use of the full JFO PA system)<br>
-Tier 3: $75.00 (Use of both the full PA system and the drum kit)</p>
-            <p>Example Calculation (Commercial Performance):<br>
-Situation: The Cadence division is paid $400 for a performance and uses the JFO Central PA system (Tier 2 HIAL).<br>
-Calculation:<br>
-Performance Percentage Portion: $400 × 0.15 = $60<br>
-HIAL Portion: $50<br>
-Total Event Contribution: $60 + $50 = $110</p>
-            <p>C. Flexibility of Rates<br>
-The default base rates specified in this Charter shall be used for all calculations. These rates may be adjusted for a specific academic year only if a formal proposal is made and approved by the Executive Board.</p>
-            <h3 class="text-xl font-bold">5.6 Management of Sponsorships and Donations</h3>
-            <p>To ensure fairness and maximize organizational benefit, all monetary sponsorships and donations ("cash" contributions) are managed centrally.<br>
-Principle of Centralization: All cash sponsorships are considered contributions to the JFO organization as a whole, not to a specific division, unless explicitly and contractually designated for a specific purpose by the sponsor.<br>
-Deposit of Funds: All cash sponsorships must be deposited directly into the JFO General Fund within the external bank account.<br>
-Use and Distribution: These funds will be managed by the Executive Board and allocated primarily through the Contingency & Growth Fund. The primary purpose of these funds is to support large-scale, cross-divisional projects, strategic initiatives, or to cover significant unbudgeted expenses that benefit the entire organization. Divisions may apply for these funds for special projects via the standard JFO Internal Funding Request Form, with priority given to proposals that demonstrate broad benefit to the JFO community.</p>
-            <h3 class="text-xl font-bold">5.7 Budgeting, Reporting & Transparency</h3>
-            <p>To build member trust, the following procedures are established:<br>
-Regular Financial Reporting: The Treasurer will provide a summary financial report at every general membership meeting except the very first meeting in Fall term.<br>
-Access to Information: Any member in good standing may request a detailed, itemized transaction report for their own division's account.</p>
-        </div>
-    </section>
+            <h3 class="text-xl font-bold mb-3 text-pink-400">1.2 Vision Statement</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">JFO aspires to be the premier home for musicians at UIUC, recognized for its artistic excellence, its inclusive and supportive community, and its sustainable, transparent, and member-driven operational structure.</p>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article VI: Asset & Equipment Management Protocol</h2>
-            <p>This section provides a comprehensive framework for managing all physical assets of the organization, providing unambiguous answers to questions of ownership, sharing, maintenance, and liability.</p>
-            <h3 class="text-xl font-bold">6.1 Asset Classification & Inventory</h3>
-            <p>Principle of Clarity: All equipment must be formally inventoried and classified to eliminate ambiguity of ownership.<br>
-Asset Classes:<br>
-Personal Property: Equipment owned by an individual member.<br>
-Divisional Property: Equipment purchased using a division's dedicated funds. Owned and maintained by that division. Must be returned to the JFO storage space by the end of the term.<br>
-JFO Central Property: Equipment purchased with General Fund resources or donated to the organization as a whole. These are shared resources.<br>
-Mandatory Inventory Log: The Vice President shall maintain a master JFO Asset Inventory Log as the single source of truth for all non-personal assets. Upon ratification of this charter, a one-time, organization-wide inventory shall be conducted to classify all existing equipment and resolve historical ownership questions.</p>
-            <h3 class="text-xl font-bold">6.2 Policy for Shared Central Assets</h3>
-            <p>This policy governs the use of JFO Central Property.<br>
-Eligibility: Use is a privilege reserved for members in good standing.<br>
-Checkout Procedure:<br>
-An Equipment Checkout Form must be submitted to the Vice President at least 3 business days in advance.<br>
-The borrowing member must sign a User Responsibility Agreement, acknowledging financial liability for damage due to negligence.<br>
-For high-value items, the Treasurer may place a temporary hold on the borrowing division's account as a security deposit.<br>
-Maintenance and Repair: Routine maintenance is funded by the General Fund. Damage from negligence will be billed to the responsible individual or their division.</p>
-            <h3 class="text-xl font-bold">6.3 Equipment Donations</h3>
-            <p>JFO may accept equipment donations. The Executive Board will determine the item's classification. All donations will be acknowledged with a Donation Receipt Form and added to the Asset Inventory Log.</p>
-        </div>
-    </section>
+            <h3 class="text-xl font-bold mb-3 text-pink-400">1.3 Core Values</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The following values guide the decisions and actions of the organization and its members:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300">
+                <li><strong class="text-white">Collaboration:</strong> We believe our greatest strength comes from the fusion of different musical traditions and the shared efforts of our members across all divisions.</li>
+                <li><strong class="text-white">Passion:</strong> We are driven by a shared love for music that fuels our creativity, dedication, and pursuit of excellence.</li>
+                <li><strong class="text-white">Inclusivity:</strong> We are fundamentally committed to creating a welcoming and equitable environment for all members, ensuring that every individual feels valued and has the opportunity to contribute.</li>
+                <li><strong class="text-white">Accountability:</strong> We operate with transparency and take collective ownership of our responsibilities to the organization, the university community, and each other.</li>
+            </ul>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article VII: Code of Conduct</h2>
-            <p>This section establishes clear, enforceable standards of behavior to prevent internal friction and ensure a safe, respectful, and productive environment.</p>
-            <h3 class="text-xl font-bold">7.1 General Conduct</h3>
-            <p>All members are expected to conduct themselves in a manner that reflects positively on JFO and are individually accountable for knowing and adhering to the UIUC Student Code.</p>
-            <h3 class="text-xl font-bold">7.2 Respect for Persons</h3>
-            <p>Members shall treat fellow members, leaders, university staff, and guests with respect, civility, and decency.<br>
-Harassment, intimidation, bullying, or any conduct that creates a hostile environment is strictly prohibited, in line with the UIUC Student Code (§ 1-302). Publicly disparaging other members or divisions is a specific violation of this code.</p>
-            <h3 class="text-xl font-bold">7.3 Respect for Property</h3>
-            <p>Members are responsible for the proper care of all university property, JFO equipment, and personal property of others.<br>
-Intentional or reckless destruction, damage, or theft of property is strictly prohibited (UIUC Student Code §1-302.k).</p>
-            <h3 class="text-xl font-bold">7.4 Safety and Wellness</h3>
-            <p>JFO has a zero-tolerance policy for hazing, as defined and forbidden by the UIUC Student Code (§1-302.d).<br>
-The unlawful possession, use, or distribution of alcohol or illicit drugs at any official JFO event is prohibited.<br>
-Members must adhere to all health and safety guidelines during rehearsals and performances.</p>
-            <h3 class="text-xl font-bold">7.5 Organizational Integrity</h3>
-            <p>Providing false or misleading information to JFO officers or university officials is a violation of this code and the UIUC Student Code (§1-302.g).<br>
-Members in leadership positions must avoid conflicts of interest and manage organizational resources responsibly.</p>
-        </div>
-    </section>
+            <h3 class="text-xl font-bold mt-8 mb-3 text-pink-400">1.4 Statement of Nondiscrimination</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">JFO explicitly adopts and adheres to the University of Illinois's nondiscrimination policy as a cornerstone of its identity. As a condition of its status as a Registered Student Organization (RSO), membership and participation in JFO must be open to all currently enrolled University of Illinois Urbana-Champaign students, without regard to actual or perceived race, color, religion, sex, national origin, ancestry, age, disability, sexual orientation, gender identity, gender expression, marital status, or any other status protected by applicable law or university policy.</p>
+            <p class="text-gray-300 leading-relaxed">This commitment is not merely a compliance requirement; it is a prerequisite for achieving our artistic mission. The internal friction and factionalism that have hindered the organization in the past are antithetical to the principles of open collaboration. A community cannot be truly collaborative or artistically vibrant if it is not also fundamentally inclusive and fair. By embedding the university's non-discrimination policy into our foundational principles, JFO affirms that a respectful and equitable environment is the bedrock upon which great music is made.</p>
+        </section>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article VIII: Conflict Resolution & Disciplinary Procedures</h2>
-            <p>This section provides a structured process for resolving disputes and addressing violations of the Code of Conduct, ensuring fairness and due process.</p>
-            <h3 class="text-xl font-bold">8.1 Conflict Resolution Pathway</h3>
-            <p>Step 1: Informal Resolution: Members are encouraged to resolve disagreements directly and respectfully whenever possible.<br>
-Step 2: Facilitated Mediation: If informal resolution fails, parties shall request mediation facilitated by a neutral third party (e.g., a divisional leader, Executive Board member, or faculty advisor).<br>
-Step 3: Formal Written Complaint: If mediation fails, a party may submit a formal written complaint to the Vice President.<br>
-Step 4: Executive Board Review & Binding Decision: The Executive Board will review the complaint and issue a binding written decision to resolve the matter.</p>
-            <h3 class="text-xl font-bold">8.2 Disciplinary Procedures</h3>
-            <p>Reporting a Violation: Any member may report an alleged violation of the Code of Conduct to any member of the Executive Board.<br>
-Investigation: The Executive Board will appoint a sub-committee to conduct a fair and impartial investigation.<br>
-Notice and Hearing: If credible evidence is found, the accused member will receive written notice of the allegations and be given an opportunity to be heard by the full Executive Board.<br>
-Sanctions: If a violation is confirmed by a majority vote, the Board may impose sanctions commensurate with the offense, such as an official warning, probation, suspension of privileges, or, in severe cases, removal from the organization.<br>
-Appeal Process: A sanctioned member may appeal the decision in writing to the faculty advisor, whose decision on the appeal will be final.</p>
-        </div>
-    </section>
+        <!-- Article II -->
+        <section class="py-10 border-b border-gray-700" id="article-ii">
+            <h2 class="text-2xl font-bold mb-4">Article II: Organizational Structure</h2>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article IX: Official Procedures & Workflows</h2>
-            <p>This section provides step-by-step instructions for key administrative processes to ensure consistency and compliance with university policies.</p>
-            <h3 class="text-xl font-bold">9.1 Applying for University Funding (SORF)</h3>
-            <p>Divisions must submit a complete proposal to the JFO Executive Board for review before the university deadline.<br>
-The JFO Treasurer is the only officer authorized to submit SORF applications on behalf of the organization.<br>
-Any SORF funds awarded will be deposited into the SOFC account and allocated for the requesting division's use according to SORF rules.</p>
-            <h3 class="text-xl font-bold">9.2 Requesting Supplemental Funds from the JFO General Fund</h3>
-            <p>The divisional leadership must submit a JFO Internal Funding Request Form to the Executive Board.<br>
-The form must detail the project's purpose, strategic value, budget, and evidence of matching funds from the division.<br>
-Approval requires a majority vote of the Executive Board.</p>
-            <h3 class="text-xl font-bold">9.3 Event Planning and Registration</h3>
-            <p>An internal JFO Event Proposal Form must be submitted to and approved by the Event Director or President Team.<br>
-Once approved internally, the event must be formally registered with the university.<br>
-All financial transactions must follow appropriate procedures for either the SOFC or external bank account (JFO procedures).</p>
-        </div>
-    </section>
+            <h3 class="text-xl font-bold mb-3 text-pink-400">2.1 Overview</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">JFO is a unified organization composed of two core structures that work in parallel: Music Divisions and the Management Team. All individuals within these structures are considered members of JFO, contributing to the organization's artistic and operational success.</p>
 
-    <section class="py-10">
-        <div class="container mx-auto px-6 space-y-6">
-            <h2 class="text-2xl font-bold">Article X: Amendments</h2>
-            <p>To ensure this governing document remains relevant, it must be a living document that can adapt to the organization's needs.</p>
-            <h3 class="text-xl font-bold">10.1 Proposal of Amendments</h3>
-            <p>Any Student Member in good standing may propose an amendment by submitting it in writing to the Executive Board.</p>
-            <h3 class="text-xl font-bold">10.2 Review and Ratification</h3>
-            <p>The Executive Board will review the proposal and present it to the general membership at least two weeks prior to a vote. An amendment shall be adopted upon receiving a two-thirds majority vote of the members present at a general meeting. Once ratified, the official Charter will be updated.</p>
-        </div>
-    </section>
+            <h3 class="text-xl font-bold mb-3 text-pink-400">2.2 Music Divisions</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">The Music Divisions are the primary artistic arms of the organization. Each division is dedicated to a specific genre or style of music, responsible for its own rehearsals, performances, and artistic development.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">2.3 Management Team</h3>
+            <p class="text-gray-300 leading-relaxed">The Management Team is the operational arm of the organization, responsible for the administration, promotion, and logistical functions that support all of JFO's activities. The Management Team is composed of various specialized sub-teams and roles that handle functions such as finance, marketing, event production, and membership services.</p>
+        </section>
+
+        <!-- Article III -->
+        <section class="py-10 border-b border-gray-700" id="article-iii">
+            <h2 class="text-2xl font-bold mb-4">Article III: Membership</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">This section defines the relationship between the individual member and the organization, emphasizing voluntary investment, clear expectations, and shared ownership.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">3.1 Eligibility</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Membership in JFO is open to two primary groups:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li><strong class="text-white">Student Members:</strong> All currently enrolled students at the University of Illinois Urbana-Champaign campus are eligible to join as Student Members.</li>
+                <li><strong class="text-white">Community Members:</strong> Individuals who are not currently enrolled students but have a past or present affiliation with the University of Illinois (e.g., alumni, staff, faculty) may join as Community Members, provided they pay all applicable membership dues.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">3.2 Membership Classes</h3>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-3">
+                <li><strong class="text-white">Divisional Member:</strong> A member (student or community) who is an active musician within one or more Music Divisions.</li>
+                <li><strong class="text-white">Management Team Member:</strong> A member (student or community) who serves in a role on the Management Team.</li>
+            </ul>
+            <p class="text-gray-300 leading-relaxed mb-6">A member may hold roles as both a Divisional Member and a Management Team Member simultaneously.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">3.3 Path to Membership</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">An eligible individual may become a member of JFO through one of two pathways:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-3">
+                <li><strong class="text-white">Music Divisions:</strong> Recruitment for Music Divisions occurs on a seasonal or semesterly basis through auditions or general interest meetings as determined by each division's leadership.</li>
+                <li><strong class="text-white">Management Team:</strong> Recruitment for the Management Team is open year-round on a rolling basis. Interested individuals may apply for open positions, and applications are reviewed by the relevant team leaders.</li>
+            </ul>
+            <p class="text-gray-300 leading-relaxed mb-6">Upon acceptance, all prospective members must complete the official JFO Membership Registration Form and pay all applicable dues by the specified deadline.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">3.4 Rights of Members in Good Standing</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The act of paying dues is an investment in the JFO community. In return, all members in good standing are afforded the following rights:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li>The right to participate fully in their respective division's or team's activities.</li>
+                <li>The right for Student Members to vote in all JFO general elections and in all elections specific to their division or team.</li>
+                <li>The right for Student Members to seek and hold leadership positions within the organization.</li>
+                <li>The right to utilize JFO-owned equipment and facilities according to the protocols outlined in Article VI.</li>
+                <li>The right to access transparent financial information for their specific division and to propose ideas and budget items to their respective leadership.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">3.5 Responsibilities &amp; Maintaining Good Standing</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">A member is considered to be in "good standing" when they have fulfilled the following obligations for the current academic semester:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li>Paid all required JFO and Divisional/Team dues in full.</li>
+                <li>Consistently adhered to the JFO Code of Conduct as detailed in Article VII.</li>
+                <li>Met any reasonable, division- or team-specific attendance or participation requirements.</li>
+                <li>Actively supported the organization's commitments to its sponsors. This includes, but is not limited to, fulfilling reasonable requests such as sharing promotional materials on social media. All Management Team members are required to lead and participate in these efforts to ensure sponsor conditions are met.</li>
+                <li>Abided by all applicable University of Illinois policies and the Student Code.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">3.6 Dues and Fees</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">Membership dues are collected directly by each Music Division at the beginning of each semester. A portion of these collected dues is then submitted to the JFO General Fund as calculated by the formula in Article V.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">3.7 Non-Refundability of Dues</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">Once paid, all membership fees and dues are non-refundable at all times and under all circumstances.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">3.8 Voluntary Withdrawal</h3>
+            <p class="text-gray-300 leading-relaxed">A member may voluntarily withdraw from the organization at any time by providing written notice to the HR Team. No refund of dues will be issued upon withdrawal.</p>
+        </section>
+
+        <!-- Article IV -->
+        <section class="py-10 border-b border-gray-700" id="article-iv">
+            <h2 class="text-2xl font-bold mb-4">Article IV: Governance &amp; Leadership</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">This section establishes a formal leadership structure that complies with university requirements for RSOs and is designed to effectively administer the organization.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">4.1 Governing Body</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">The primary governing and administrative body of JFO shall be the Executive Board.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">4.2 Executive Board Composition</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The Executive Board shall be composed of the leaders of the organization's primary management teams. The board consists of the following officers, who must be currently enrolled students:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li><strong class="text-white">President's Team:</strong> President &amp; Vice President</li>
+                <li><strong class="text-white">Finance Team:</strong> Treasurer</li>
+                <li><strong class="text-white">HR Team:</strong> Membership Director</li>
+                <li><strong class="text-white">Events Team:</strong> Event Director</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">4.3 Duties of Executive Officers</h3>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-3 text-gray-300 mb-6">
+                <li><strong class="text-white">President (Primary Executive Officer):</strong> Serves as the chief executive and official representative of JFO. Presides over all Executive Board and general meetings, provides strategic direction, co-signs major financial requests, and ensures the organization operates in accordance with this Charter.</li>
+                <li><strong class="text-white">Vice President (Primary Operations Officer):</strong> Oversees the operational logistics of the organization, including the administration of the Asset &amp; Equipment Management Protocol (Article VI). Maintains the master JFO Asset Inventory Log and administers the Conflict Resolution Pathway.</li>
+                <li><strong class="text-white">Treasurer (Finance Team Lead):</strong> The chief financial administrator of the JFO financial framework. Manages all organizational funds across both the SOFC and external bank accounts, prepares the annual budget for the JFO General Fund, delivers financial reports, oversees Central Fund contributions, and processes payment requests.</li>
+                <li><strong class="text-white">Membership Director (HR Team Lead):</strong> Manages all aspects of member recruitment, registration, and retention. Maintains the official roster of members in good standing, verifies member eligibility, records and distributes the minutes of all meetings, and manages official communication channels.</li>
+                <li><strong class="text-white">Event Director (Events Team Lead):</strong> Oversees the planning, coordination, and execution of all major JFO events, both divisional and organization-wide. Serves as the chairperson of the event planning committee, manages event registration workflows, and coordinates with divisional leaders and the Vice President on logistical needs.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">4.4 Divisional Leadership</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">Each Music Division shall elect or appoint its own leadership, which must include at least a Director and Vice Manager. These leaders are responsible for the day-to-day management of their respective unit, including setting artistic direction, managing their budget, and communicating with their members.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">4.5 Elections</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">Elections for the Executive Board shall be held annually during the spring semester. Any Student Member in good standing is eligible to run. Elections shall be conducted by secret ballot, and results will be determined by a simple majority of votes cast.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">4.6 Removal of Officers</h3>
+            <p class="text-gray-300 leading-relaxed">An officer may be removed for just cause, including gross negligence of duties or violations of the Code of Conduct. The process requires a petition signed by at least 20% of the student membership, followed by a special meeting where the officer has the right to be heard. Removal requires a two-thirds majority vote of the student members present.</p>
+        </section>
+
+        <!-- Article V -->
+        <section class="py-10 border-b border-gray-700" id="article-v">
+            <h2 class="text-2xl font-bold mb-4">Article V: The "JFO as a Platform" Financial Framework</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">This section codifies the organization's financial model, which is designed to provide divisional autonomy while ensuring collective stability and compliance with UIUC financial policies.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">5.1 Financial Accounts</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">JFO maintains two separate physical financial accounts to manage its funds:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li><strong class="text-white">The Student Organization Finance Center (SOFC) Account:</strong> This university-administered account is used exclusively for transactions involving the university. This includes receiving funding from university sources (like SORF) and paying for on-campus services such as venue rentals. This account is not used for general operations or as the JFO General Fund.</li>
+                <li><strong class="text-white">The JFO External Bank Account:</strong> This is the primary financial account for the organization, held at an external financial institution. All membership dues, performance revenue, sponsorships, and other non-university income are deposited here. All general operational expenses are paid from this account.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">5.2 Principle of Divisional Financial Autonomy</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">Each primary musical division within JFO will operate with financial independence. All revenue generated from a division's specific activities will be directly deposited into The JFO External Bank Account. This revenue will then be logged in that division's individual logical account after calculation. The leadership of each division holds the authority to approve expenditures from their respective logical account.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">5.3 Divisional Accounts</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">The JFO Treasurer will maintain logically separate accounts within the JFO External Bank Account for its two primary musical arms:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li><strong class="text-white">The Cadence Account:</strong> For the Live Bands division.</li>
+                <li><strong class="text-white">The Harmony Account:</strong> For the Orchestra divisions, including the Symphony Orchestra, Modern Chinese Orchestra, and Choir.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">5.4 The JFO General Fund</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">To support shared infrastructure and services, JFO will maintain a General Fund within the external bank account. This fund is a dedicated budget for essential, organization-wide costs and is composed of two parts:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li><strong class="text-white">The Operating Budget:</strong> Covers predictable, recurring costs such as shared storage, website hosting, general marketing, and maintenance of JFO Central Property.</li>
+                <li><strong class="text-white">The Contingency &amp; Growth Fund:</strong> The organization's savings account, designed to cover unexpected financial emergencies and provide strategic co-sponsorship for major, cross-divisional events.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">5.5 General Fund Contribution Mechanism</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">To ensure fairness and sustainability, contributions to the JFO General Fund are made from each instance of revenue generation. This "platform fee" model uses different calculations for membership dues versus other revenue to ensure the contribution is equitable and logical for the type of income received.</p>
+
+            <h4 class="text-lg font-bold mb-3">A. Contribution from Membership Dues</h4>
+            <p class="text-gray-300 leading-relaxed mb-3">The contribution from semesterly membership dues is calculated using a hybrid formula that combines a per-member fee with a percentage of total dues collected.</p>
+            <div class="formula-box rounded-lg p-4 mb-4">
+                <p class="font-bold text-white mb-2">Dues Contribution Formula</p>
+                <p class="text-gray-200">Dues Contribution = (Number of Members &times; Per-Member Fee) + (Total Dues Collected &times; Platform Percentage)</p>
+            </div>
+            <p class="text-gray-300 leading-relaxed mb-3">Formula Components &amp; Default Base Rates:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-4">
+                <li><strong class="text-white">Per-Member Fee:</strong> A fixed dollar amount for each dues-paying member. The default base rate is <strong class="text-white">$5.00</strong> per member.</li>
+                <li><strong class="text-white">Platform Percentage:</strong> A fixed percentage of the total dues collected by the division. The default base rate is <strong class="text-white">15%</strong>.</li>
+            </ul>
+            <div class="example-box rounded-lg p-4 mb-6">
+                <p class="font-bold text-white mb-2">Example: Membership Dues Contribution</p>
+                <p class="text-gray-300 mb-2">The Cadence division has 30 members paying $50 each.</p>
+                <ul class="list-none space-y-1 text-gray-300 ml-2">
+                    <li>Total Dues Collected: 30 &times; $50 = <strong class="text-white">$1,500</strong></li>
+                    <li>Per-Member Portion: 30 &times; $5.00 = <strong class="text-white">$150</strong></li>
+                    <li>Platform Percentage Portion: $1,500 &times; 0.15 = <strong class="text-white">$225</strong></li>
+                    <li>Total Cadence Contribution: $150 + $225 = <strong class="text-pink-400">$375</strong></li>
+                </ul>
+            </div>
+
+            <h4 class="text-lg font-bold mb-3">B. Contribution from Performance &amp; Event Revenue</h4>
+            <p class="text-gray-300 leading-relaxed mb-3">The contribution from other revenue sources, such as commercial shows or ticketed concerts, is calculated based on the gross revenue of the event plus a levy for the use of high-value shared assets.</p>
+            <div class="formula-box rounded-lg p-4 mb-4">
+                <p class="font-bold text-white mb-2">Event Contribution Formula</p>
+                <p class="text-gray-200">Event Contribution = (Gross Event Revenue &times; Performance Percentage) + High-Impact Asset Levy (HIAL)</p>
+            </div>
+            <p class="text-gray-300 leading-relaxed mb-3">Formula Components &amp; Default Base Rates:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-3">
+                <li><strong class="text-white">Performance Percentage:</strong> A fixed percentage of the gross revenue from the event. The default base rate is <strong class="text-white">15%</strong>.</li>
+                <li><strong class="text-white">High-Impact Asset Levy (HIAL):</strong> A tiered, fixed fee applied only when the event requires the use of designated JFO Central Property. The default HIAL tiers are:</li>
+            </ul>
+            <div class="ml-6 mb-4 bg-gray-800 rounded-lg overflow-hidden">
+                <table class="w-full text-sm text-gray-300">
+                    <thead><tr class="border-b border-gray-700"><th class="text-left px-4 py-2 text-white">Tier</th><th class="text-left px-4 py-2 text-white">Fee</th><th class="text-left px-4 py-2 text-white">Applies When</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700"><td class="px-4 py-2">Tier 1</td><td class="px-4 py-2">$25.00</td><td class="px-4 py-2">Use of the shared drum kit OR the portable mixing board</td></tr>
+                        <tr class="border-b border-gray-700"><td class="px-4 py-2">Tier 2</td><td class="px-4 py-2">$50.00</td><td class="px-4 py-2">Use of the full JFO PA system</td></tr>
+                        <tr><td class="px-4 py-2">Tier 3</td><td class="px-4 py-2">$75.00</td><td class="px-4 py-2">Use of both the full PA system and the drum kit</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="example-box rounded-lg p-4 mb-6">
+                <p class="font-bold text-white mb-2">Example: Commercial Performance Contribution</p>
+                <p class="text-gray-300 mb-2">The Cadence division is paid $400 for a performance and uses the JFO Central PA system (Tier 2 HIAL).</p>
+                <ul class="list-none space-y-1 text-gray-300 ml-2">
+                    <li>Performance Percentage Portion: $400 &times; 0.15 = <strong class="text-white">$60</strong></li>
+                    <li>HIAL Portion: <strong class="text-white">$50</strong></li>
+                    <li>Total Event Contribution: $60 + $50 = <strong class="text-pink-400">$110</strong></li>
+                </ul>
+            </div>
+
+            <h4 class="text-lg font-bold mb-3">C. Flexibility of Rates</h4>
+            <p class="text-gray-300 leading-relaxed mb-6">The default base rates specified in this Charter shall be used for all calculations. These rates may be adjusted for a specific academic year only if a formal proposal is made and approved by the Executive Board.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">5.6 Management of Sponsorships and Donations</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">To ensure fairness and maximize organizational benefit, all monetary sponsorships and donations ("cash" contributions) are managed centrally.</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li><strong class="text-white">Principle of Centralization:</strong> All cash sponsorships are considered contributions to the JFO organization as a whole, not to a specific division, unless explicitly and contractually designated for a specific purpose by the sponsor.</li>
+                <li><strong class="text-white">Deposit of Funds:</strong> All cash sponsorships must be deposited directly into the JFO General Fund within the external bank account.</li>
+                <li><strong class="text-white">Use and Distribution:</strong> These funds will be managed by the Executive Board and allocated primarily through the Contingency &amp; Growth Fund. The primary purpose of these funds is to support large-scale, cross-divisional projects, strategic initiatives, or to cover significant unbudgeted expenses that benefit the entire organization. Divisions may apply for these funds for special projects via the standard JFO Internal Funding Request Form, with priority given to proposals that demonstrate broad benefit to the JFO community.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">5.7 Budgeting, Reporting &amp; Transparency</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">To build member trust, the following procedures are established:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300">
+                <li><strong class="text-white">Regular Financial Reporting:</strong> The Treasurer will provide a summary financial report at every general membership meeting except the very first meeting in Fall term.</li>
+                <li><strong class="text-white">Access to Information:</strong> Any member in good standing may request a detailed, itemized transaction report for their own division's account.</li>
+            </ul>
+        </section>
+
+        <!-- Article VI -->
+        <section class="py-10 border-b border-gray-700" id="article-vi">
+            <h2 class="text-2xl font-bold mb-4">Article VI: Asset &amp; Equipment Management Protocol</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">This section provides a comprehensive framework for managing all physical assets of the organization, providing unambiguous answers to questions of ownership, sharing, maintenance, and liability.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">6.1 Asset Classification &amp; Inventory</h3>
+            <p class="text-gray-300 leading-relaxed mb-3"><strong class="text-white">Principle of Clarity:</strong> All equipment must be formally inventoried and classified to eliminate ambiguity of ownership.</p>
+            <p class="text-gray-300 leading-relaxed mb-3">Asset Classes:</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-4">
+                <li><strong class="text-white">Personal Property:</strong> Equipment owned by an individual member.</li>
+                <li><strong class="text-white">Divisional Property:</strong> Equipment purchased using a division's dedicated funds. Owned and maintained by that division. Must be returned to the JFO storage space by the end of the term.</li>
+                <li><strong class="text-white">JFO Central Property:</strong> Equipment purchased with General Fund resources or donated to the organization as a whole. These are shared resources.</li>
+            </ul>
+            <p class="text-gray-300 leading-relaxed mb-6"><strong class="text-white">Mandatory Inventory Log:</strong> The Vice President shall maintain a master JFO Asset Inventory Log as the single source of truth for all non-personal assets. Upon ratification of this charter, a one-time, organization-wide inventory shall be conducted to classify all existing equipment and resolve historical ownership questions.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">6.2 Policy for Shared Central Assets</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">This policy governs the use of JFO Central Property.</p>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-3">
+                <li><strong class="text-white">Eligibility:</strong> Use is a privilege reserved for members in good standing.</li>
+                <li><strong class="text-white">Checkout Procedure:</strong>
+                    <ol class="list-decimal list-outside ml-6 mt-2 space-y-1">
+                        <li>An Equipment Checkout Form must be submitted to the Vice President at least 3 business days in advance.</li>
+                        <li>The borrowing member must sign a User Responsibility Agreement, acknowledging financial liability for damage due to negligence.</li>
+                        <li>For high-value items, the Treasurer may place a temporary hold on the borrowing division's account as a security deposit.</li>
+                    </ol>
+                </li>
+                <li><strong class="text-white">Maintenance and Repair:</strong> Routine maintenance is funded by the General Fund. Damage from negligence will be billed to the responsible individual or their division.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mt-8 mb-3 text-pink-400">6.3 Equipment Donations</h3>
+            <p class="text-gray-300 leading-relaxed">JFO may accept equipment donations. The Executive Board will determine the item's classification. All donations will be acknowledged with a Donation Receipt Form and added to the Asset Inventory Log.</p>
+        </section>
+
+        <!-- Article VII -->
+        <section class="py-10 border-b border-gray-700" id="article-vii">
+            <h2 class="text-2xl font-bold mb-4">Article VII: Code of Conduct</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">This section establishes clear, enforceable standards of behavior to prevent internal friction and ensure a safe, respectful, and productive environment.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">7.1 General Conduct</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">All members are expected to conduct themselves in a manner that reflects positively on JFO and are individually accountable for knowing and adhering to the UIUC Student Code.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">7.2 Respect for Persons</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Members shall treat fellow members, leaders, university staff, and guests with respect, civility, and decency.</p>
+            <p class="text-gray-300 leading-relaxed mb-6">Harassment, intimidation, bullying, or any conduct that creates a hostile environment is strictly prohibited, in line with the UIUC Student Code (&sect; 1-302). Publicly disparaging other members or divisions is a specific violation of this code.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">7.3 Respect for Property</h3>
+            <p class="text-gray-300 leading-relaxed mb-3">Members are responsible for the proper care of all university property, JFO equipment, and personal property of others.</p>
+            <p class="text-gray-300 leading-relaxed mb-6">Intentional or reckless destruction, damage, or theft of property is strictly prohibited (UIUC Student Code &sect;1-302.k).</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">7.4 Safety and Wellness</h3>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li>JFO has a zero-tolerance policy for hazing, as defined and forbidden by the UIUC Student Code (&sect;1-302.d).</li>
+                <li>The unlawful possession, use, or distribution of alcohol or illicit drugs at any official JFO event is prohibited.</li>
+                <li>Members must adhere to all health and safety guidelines during rehearsals and performances.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">7.5 Organizational Integrity</h3>
+            <ul class="charter-list list-disc list-outside ml-6 space-y-2 text-gray-300">
+                <li>Providing false or misleading information to JFO officers or university officials is a violation of this code and the UIUC Student Code (&sect;1-302.g).</li>
+                <li>Members in leadership positions must avoid conflicts of interest and manage organizational resources responsibly.</li>
+            </ul>
+        </section>
+
+        <!-- Article VIII -->
+        <section class="py-10 border-b border-gray-700" id="article-viii">
+            <h2 class="text-2xl font-bold mb-4">Article VIII: Conflict Resolution &amp; Disciplinary Procedures</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">This section provides a structured process for resolving disputes and addressing violations of the Code of Conduct, ensuring fairness and due process.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">8.1 Conflict Resolution Pathway</h3>
+            <ol class="list-decimal list-outside ml-6 space-y-3 text-gray-300 mb-6">
+                <li><strong class="text-white">Informal Resolution:</strong> Members are encouraged to resolve disagreements directly and respectfully whenever possible.</li>
+                <li><strong class="text-white">Facilitated Mediation:</strong> If informal resolution fails, parties shall request mediation facilitated by a neutral third party (e.g., a divisional leader, Executive Board member, or faculty advisor).</li>
+                <li><strong class="text-white">Formal Written Complaint:</strong> If mediation fails, a party may submit a formal written complaint to the Vice President.</li>
+                <li><strong class="text-white">Executive Board Review &amp; Binding Decision:</strong> The Executive Board will review the complaint and issue a binding written decision to resolve the matter.</li>
+            </ol>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">8.2 Disciplinary Procedures</h3>
+            <ol class="list-decimal list-outside ml-6 space-y-3 text-gray-300">
+                <li><strong class="text-white">Reporting a Violation:</strong> Any member may report an alleged violation of the Code of Conduct to any member of the Executive Board.</li>
+                <li><strong class="text-white">Investigation:</strong> The Executive Board will appoint a sub-committee to conduct a fair and impartial investigation.</li>
+                <li><strong class="text-white">Notice and Hearing:</strong> If credible evidence is found, the accused member will receive written notice of the allegations and be given an opportunity to be heard by the full Executive Board.</li>
+                <li><strong class="text-white">Sanctions:</strong> If a violation is confirmed by a majority vote, the Board may impose sanctions commensurate with the offense, such as an official warning, probation, suspension of privileges, or, in severe cases, removal from the organization.</li>
+                <li><strong class="text-white">Appeal Process:</strong> A sanctioned member may appeal the decision in writing to the faculty advisor, whose decision on the appeal will be final.</li>
+            </ol>
+        </section>
+
+        <!-- Article IX -->
+        <section class="py-10 border-b border-gray-700" id="article-ix">
+            <h2 class="text-2xl font-bold mb-4">Article IX: Official Procedures &amp; Workflows</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">This section provides step-by-step instructions for key administrative processes to ensure consistency and compliance with university policies.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">9.1 Applying for University Funding (SORF)</h3>
+            <ol class="list-decimal list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li>Divisions must submit a complete proposal to the JFO Executive Board for review before the university deadline.</li>
+                <li>The JFO Treasurer is the only officer authorized to submit SORF applications on behalf of the organization.</li>
+                <li>Any SORF funds awarded will be deposited into the SOFC account and allocated for the requesting division's use according to SORF rules.</li>
+            </ol>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">9.2 Requesting Supplemental Funds from the JFO General Fund</h3>
+            <ol class="list-decimal list-outside ml-6 space-y-2 text-gray-300 mb-6">
+                <li>The divisional leadership must submit a JFO Internal Funding Request Form to the Executive Board.</li>
+                <li>The form must detail the project's purpose, strategic value, budget, and evidence of matching funds from the division.</li>
+                <li>Approval requires a majority vote of the Executive Board.</li>
+            </ol>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">9.3 Event Planning and Registration</h3>
+            <ol class="list-decimal list-outside ml-6 space-y-2 text-gray-300">
+                <li>An internal JFO Event Proposal Form must be submitted to and approved by the Event Director or President Team.</li>
+                <li>Once approved internally, the event must be formally registered with the university.</li>
+                <li>All financial transactions must follow appropriate procedures for either the SOFC or external bank account (JFO procedures).</li>
+            </ol>
+        </section>
+
+        <!-- Article X -->
+        <section class="py-10" id="article-x">
+            <h2 class="text-2xl font-bold mb-4">Article X: Amendments</h2>
+            <p class="text-gray-300 leading-relaxed mb-6">To ensure this governing document remains relevant, it must be a living document that can adapt to the organization's needs.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">10.1 Proposal of Amendments</h3>
+            <p class="text-gray-300 leading-relaxed mb-6">Any Student Member in good standing may propose an amendment by submitting it in writing to the Executive Board.</p>
+
+            <h3 class="text-xl font-bold mb-3 text-pink-400">10.2 Review and Ratification</h3>
+            <p class="text-gray-300 leading-relaxed">The Executive Board will review the proposal and present it to the general membership at least two weeks prior to a vote. An amendment shall be adopted upon receiving a two-thirds majority vote of the members present at a general meeting. Once ratified, the official Charter will be updated.</p>
+        </section>
+
+    </div>
 </main>
 
 <!-- Footer -->
 <footer class="bg-black py-10">
     <div class="container mx-auto px-6 text-center text-gray-400">
-        <p class="mb-4">COPYRIGHT © 2012 - 2025 JFO. ALL RIGHTS RESERVED.</p>
+        <p class="mb-4">COPYRIGHT &copy; 2012 - 2026 JFO. ALL RIGHTS RESERVED.</p>
         <p>Email: <a class="hover:text-pink-400" href="mailto:hello@jfouiuc.com">hello@jfouiuc.com</a></p>
     </div>
 </footer>
