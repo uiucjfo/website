@@ -8,10 +8,11 @@
     <title>Jasmine Field Orchestra (JFO) | UIUC Student Music Organization</title>
     <meta content="Discover the Jasmine Field Orchestra (JFO) at UIUC, a student-led music community. We unite diverse talents in genres from classical and traditional Chinese music to pop/rock. Join us to share your passion for music!"
           name="description">
-    <meta content="Jasmine Field Orchestra, JFO, UIUC, University of Illinois, student orchestra, college music, orchestra, choir, pop/rock band, Chinese music, student organization"
+    <meta content="Jasmine Field Orchestra, JFO, UIUC, University of Illinois, student orchestra, college music, orchestra, choir, pop/rock band, Chinese music, Modern Chinese Orchestra, student organization"
           name="keywords">
     <meta content="Jasmine Field Orchestra" name="author">
     <link href="https://jfouiuc.org/" rel="canonical">
+    <meta content="index, follow" name="robots">
 
     <!-- Open Graph / Facebook -->
     <meta content="website" property="og:type">
@@ -23,22 +24,47 @@
           property="og:image">
 
     <!-- Twitter -->
-    <meta content="summary_large_image" property="twitter:card">
-    <meta content="https://jfouiuc.org/" property="twitter:url">
-    <meta content="Jasmine Field Orchestra (JFO) | UIUC Student Music Organization" property="twitter:title">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="https://jfouiuc.org/" name="twitter:url">
+    <meta content="Jasmine Field Orchestra (JFO) | UIUC Student Music Organization" name="twitter:title">
     <meta content="A vibrant, student-led music community at the University of Illinois Urbana-Champaign, celebrating a fusion of musical genres and cultures."
-          property="twitter:description">
+          name="twitter:description">
     <meta content="https://jfouiuc.org/assets/images/logo-square.png"
-          property="twitter:image">
+          name="twitter:image">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="assets/css/tailwind.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;500&display=swap"
           rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Jasmine Field Orchestra",
+        "alternateName": "JFO",
+        "url": "https://jfouiuc.org/",
+        "logo": "https://jfouiuc.org/assets/images/logo-square.png",
+        "description": "A vibrant, student-led music community at the University of Illinois Urbana-Champaign, celebrating a fusion of musical genres and cultures.",
+        "email": "hello@jfouiuc.com",
+        "foundingDate": "2012",
+        "sameAs": [
+            "https://www.instagram.com/jfouiuc",
+            "https://www.youtube.com/@jfouiuc",
+            "https://www.facebook.com/jfouiuc"
+        ],
+        "parentOrganization": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Illinois Urbana-Champaign",
+            "url": "https://illinois.edu"
+        }
+    }
+    </script>
 
     <!-- Favicon -->
     <link href="assets/images/cropped-jfo-favicon-32x32.png"
@@ -125,6 +151,10 @@
 </head>
 <body class="bg-gray-900 text-white">
 
+<!-- Skip to Content (Accessibility) -->
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-500 focus:text-white focus:py-2 focus:px-4 focus:rounded"
+   href="#home">Skip to content</a>
+
 <!-- Header & Navigation -->
 <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="header">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -178,7 +208,7 @@
 <main>
     <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center text-center overflow-hidden" id="home">
-        <video autoplay class="video-bg" loop muted>
+        <video autoplay class="video-bg" loop muted preload="metadata">
             <source src="assets/videos/JFOWebBG_Mini.mp4" type="video/mp4">
             <source src="assets/videos/JFOWebBG.webm" type="video/webm">
             Your browser does not support the video tag.
@@ -241,9 +271,9 @@
                         to contemporary works.</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-gray-700">
-                    <h3 class="text-2xl font-bold mb-2 text-pink-400">Chinese Folk Music</h3>
-                    <p class="text-gray-400">Showcasing the enchanting melodies and unique charm of traditional Chinese
-                        instruments.</p>
+                    <h3 class="text-2xl font-bold mb-2 text-pink-400">Modern Chinese Orchestra</h3>
+                    <p class="text-gray-400">Bringing Chinese musical heritage to the modern stage through a full
+                        orchestral ensemble of traditional instruments and contemporary arrangements.</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-gray-700">
                     <h3 class="text-2xl font-bold mb-2 text-pink-400">Choir</h3>
@@ -278,7 +308,7 @@
 <!-- Footer -->
 <footer class="bg-black py-10">
     <div class="container mx-auto px-6 text-center text-gray-400">
-        <p class="mb-4">COPYRIGHT © 2012 - 2024 JFO. ALL RIGHTS RESERVED.</p>
+        <p class="mb-4">COPYRIGHT © 2012 - 2026 JFO. ALL RIGHTS RESERVED.</p>
         <p>Email: <a class="hover:text-pink-400" href="mailto:hello@jfouiuc.com">hello@jfouiuc.com</a></p>
     </div>
 </footer>

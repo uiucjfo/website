@@ -6,12 +6,13 @@
 
     <!-- SEO Meta Tags -->
     <title>About the Jasmine Field Orchestra (JFO) | Our Story & Mission</title>
-    <meta content="Learn about the Jasmine Field Orchestra (JFO) at UIUC. Discover our history since 2012, our mission to unite cultures through music, and our diverse Symphony, Chinese Folk, Choir, and Live Band divisions."
+    <meta content="Learn about the Jasmine Field Orchestra (JFO) at UIUC. Discover our history since 2012, our mission to unite cultures through music, and our diverse Symphony, Modern Chinese Orchestra, Choir, and Live Band divisions."
           name="description">
     <meta content="JFO history, JFO mission, UIUC music clubs, Jasmine Field Orchestra story, student musicians, cultural harmony, diversity in music"
           name="keywords">
     <meta content="Jasmine Field Orchestra" name="author">
     <link href="https://jfouiuc.org/about.html" rel="canonical">
+    <meta content="index, follow" name="robots">
 
     <!-- Open Graph / Facebook -->
     <meta content="article" property="og:type">
@@ -23,22 +24,47 @@
           property="og:image">
 
     <!-- Twitter -->
-    <meta content="summary_large_image" property="twitter:card">
-    <meta content="https://jfouiuc.org/about.html" property="twitter:url">
-    <meta content="About the Jasmine Field Orchestra (JFO) | Our Story & Mission" property="twitter:title">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="https://jfouiuc.org/about.html" name="twitter:url">
+    <meta content="About the Jasmine Field Orchestra (JFO) | Our Story & Mission" name="twitter:title">
     <meta content="From a passionate student group in 2012 to a symphony of cultures at UIUC, explore the journey and vision of the Jasmine Field Orchestra."
-          property="twitter:description">
+          name="twitter:description">
     <meta content="https://jfouiuc.org/assets/images/about-banner.png"
-          property="twitter:image">
+          name="twitter:image">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="assets/css/tailwind.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;500&display=swap"
           rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About the Jasmine Field Orchestra",
+        "url": "https://jfouiuc.org/about.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Jasmine Field Orchestra",
+            "alternateName": "JFO",
+            "url": "https://jfouiuc.org/",
+            "logo": "https://jfouiuc.org/assets/images/logo-square.png",
+            "description": "A vibrant, student-led music community at the University of Illinois Urbana-Champaign, celebrating a fusion of musical genres and cultures.",
+            "email": "hello@jfouiuc.com",
+            "foundingDate": "2012",
+            "sameAs": [
+                "https://www.instagram.com/jfouiuc",
+                "https://www.youtube.com/@jfouiuc",
+                "https://www.facebook.com/jfouiuc"
+            ]
+        }
+    }
+    </script>
 
     <!-- Favicon -->
     <link href="assets/images/cropped-jfo-favicon-32x32.png"
@@ -74,10 +100,14 @@
 </head>
 <body class="bg-gray-900 text-white">
 
+<!-- Skip to Content (Accessibility) -->
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-500 focus:text-white focus:py-2 focus:px-4 focus:rounded"
+   href="#main-content">Skip to content</a>
+
 <!-- Header & Navigation -->
 <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="header">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a class="text-2xl font-bold" href="/">
+        <a class="text-2xl font-bold" href="index.html">
             <img alt="JFO Logo"
                  class="h-10 transition-transform duration-300 hover:scale-105"
                  src="assets/images/full-logo-h-white-colored.png">
@@ -124,7 +154,7 @@
     </div>
 </header>
 
-<main>
+<main id="main-content">
     <!-- Page Header -->
     <section class="page-header relative py-32">
         <div class="absolute inset-0 header-overlay"></div>
@@ -159,7 +189,7 @@
     <section class="py-20">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12">Our Core Values</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
                 <div class="bg-gray-800 p-6 rounded-lg">
                     <h3 class="text-2xl font-bold mb-2 text-pink-400">Passion</h3>
                     <p class="text-gray-400">A shared enthusiasm for music is the driving force behind everything we
@@ -175,6 +205,8 @@
                     <p class="text-gray-400">We are committed to continuous learning and artistic development for all
                         our members.</p>
                 </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 text-center mt-8 max-w-2xl mx-auto">
                 <div class="bg-gray-800 p-6 rounded-lg">
                     <h3 class="text-2xl font-bold mb-2 text-pink-400">Respect</h3>
                     <p class="text-gray-400">We cultivate an environment where every member's contribution is valued and
@@ -217,9 +249,9 @@
                         to contemporary works.</p>
                 </div>
                 <div class="bg-gray-900 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 hover:cursor-pointer">
-                    <h3 class="text-2xl font-bold mb-2 text-pink-400">Chinese Folk Music</h3>
-                    <p class="text-gray-400">Showcasing the enchanting melodies and unique charm of traditional Chinese
-                        instruments.</p>
+                    <h3 class="text-2xl font-bold mb-2 text-pink-400">Modern Chinese Orchestra</h3>
+                    <p class="text-gray-400">Bringing Chinese musical heritage to the modern stage through a full
+                        orchestral ensemble of traditional instruments and contemporary arrangements.</p>
                 </div>
                 <div class="bg-gray-900 p-6 rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 hover:cursor-pointer">
                     <h3 class="text-2xl font-bold mb-2 text-pink-400">Choir</h3>
@@ -240,7 +272,7 @@
 <!-- Footer -->
 <footer class="bg-black py-10">
     <div class="container mx-auto px-6 text-center text-gray-400">
-        <p class="mb-4">COPYRIGHT © 2012 - 2025 JFO. ALL RIGHTS RESERVED.</p>
+        <p class="mb-4">COPYRIGHT © 2012 - 2026 JFO. ALL RIGHTS RESERVED.</p>
         <p>Email: <a class="hover:text-pink-400" href="mailto:hello@jfouiuc.com">hello@jfouiuc.com</a></p>
     </div>
 </footer>
