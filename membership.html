@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- SEO Meta Tags -->
+    <title>Membership & Dues | Jasmine Field Orchestra (JFO) at UIUC</title>
+    <meta content="Join the Jasmine Field Orchestra at UIUC. Pay your semester membership dues securely online and become part of our vibrant music community."
+          name="description">
+    <meta content="JFO membership, Jasmine Field Orchestra dues, UIUC music club membership, join JFO, student orchestra membership"
+          name="keywords">
+    <meta content="Jasmine Field Orchestra" name="author">
+    <link href="https://jfouiuc.org/membership.html" rel="canonical">
+    <meta content="index, follow" name="robots">
+
+    <!-- Open Graph / Facebook -->
+    <meta content="website" property="og:type">
+    <meta content="https://jfouiuc.org/membership.html" property="og:url">
+    <meta content="Membership & Dues | Jasmine Field Orchestra (JFO) at UIUC" property="og:title">
+    <meta content="Join the Jasmine Field Orchestra at UIUC. Pay your semester membership dues and become part of our vibrant music community."
+          property="og:description">
+    <meta content="https://jfouiuc.org/assets/images/logo-square.png" property="og:image">
+
+    <!-- Twitter -->
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="https://jfouiuc.org/membership.html" name="twitter:url">
+    <meta content="Membership & Dues | Jasmine Field Orchestra (JFO) at UIUC" name="twitter:title">
+    <meta content="Join the Jasmine Field Orchestra at UIUC. Pay your semester membership dues and become part of our vibrant music community."
+          name="twitter:description">
+    <meta content="https://jfouiuc.org/assets/images/logo-square.png" name="twitter:image">
+
+    <!-- Tailwind CSS -->
+    <link href="assets/css/tailwind.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;500&display=swap"
+          rel="stylesheet">
+
+    <!-- Stripe Pricing Table -->
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Membership & Dues",
+        "url": "https://jfouiuc.org/membership.html",
+        "description": "Join the Jasmine Field Orchestra at UIUC. Pay your semester membership dues securely online.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Jasmine Field Orchestra",
+            "url": "https://jfouiuc.org/"
+        }
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Style for scrolled header */
+        .header-scrolled {
+            background-color: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        /* FAQ accordion */
+        details summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary::before {
+            content: '+';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.75rem;
+            border-radius: 9999px;
+            background-color: rgb(236, 72, 153);
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        details[open] summary::before {
+            content: '\2212';
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            color: rgb(244, 114, 182);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+<!-- Skip to Content (Accessibility) -->
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-500 focus:text-white focus:py-2 focus:px-4 focus:rounded"
+   href="#main-content">Skip to content</a>
+
+<!-- Header & Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="header">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a class="text-2xl font-bold" href="index.html">
+            <img alt="JFO Logo"
+                 class="h-10 transition-transform duration-300 hover:scale-105"
+                 src="assets/images/full-logo-h-white-colored.png">
+        </a>
+        <div class="hidden xl:flex items-center space-x-8 text-lg">
+            <a class="flex items-center space-x-2 hover:text-pink-400 transition-colors" href="index.html">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                </svg>
+                <span>Home</span>
+            </a>
+            <a class="flex items-center space-x-2 hover:text-pink-400 transition-colors" href="about.html">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                          fill-rule="evenodd"/>
+                </svg>
+                <span>About</span>
+            </a>
+            <a class="flex items-center space-x-2 text-pink-400 transition-colors" href="membership.html">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
+                    <path clip-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" fill-rule="evenodd"/>
+                </svg>
+                <span>Membership</span>
+            </a>
+            <a class="flex items-center space-x-2 hover:text-pink-400 transition-colors"
+               href="https://news.jfouiuc.org/" rel="noopener noreferrer"
+               target="_blank">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                          d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3 1h10a1 1 0 010 2H5a1 1 0 010-2zm0 4h10a1 1 0 010 2H5a1 1 0 010-2zm0 4h6a1 1 0 010 2H5a1 1 0 010-2z"
+                          fill-rule="evenodd"/>
+                </svg>
+                <span>News & Announcements</span>
+            </a>
+        </div>
+        <button class="xl:hidden text-2xl z-50" id="mobile-menu-button">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            </svg>
+        </button>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="hidden xl:hidden bg-gray-800" id="mobile-menu">
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700" href="index.html">Home</a>
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700" href="about.html">About</a>
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700 text-pink-400" href="membership.html">Membership</a>
+        <a class="block py-3 px-4 text-sm hover:bg-gray-700" href="https://news.jfouiuc.org/" rel="noopener noreferrer"
+           target="_blank">News & Announcements</a>
+    </div>
+</header>
+
+<main id="main-content" class="pt-24">
+    <!-- Page Header -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Membership</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">Support the ensemble and secure your place for the upcoming season.</p>
+        </div>
+    </section>
+
+    <!-- Why Join / What Dues Cover -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">What Your Dues Support</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center max-w-5xl mx-auto">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="text-pink-400 mb-4">
+                        <svg class="h-10 w-10 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-pink-400">Sheet Music</h3>
+                    <p class="text-gray-400">Licensing and purchasing scores for our diverse repertoire across all divisions.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="text-pink-400 mb-4">
+                        <svg class="h-10 w-10 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-.293.707l-3 3A1 1 0 0112 20H6a2 2 0 01-2-2V4zm2 0h8v12h-2a1 1 0 00-1 1v2H6V4z" fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-pink-400">Rehearsal Space</h3>
+                    <p class="text-gray-400">Booking and maintaining dedicated spaces for weekly rehearsals and sectionals.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="text-pink-400 mb-4">
+                        <svg class="h-10 w-10 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 100 4v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2a2 2 0 100-4V6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-pink-400">Concerts & Events</h3>
+                    <p class="text-gray-400">Performance venues, event production, marketing materials, and logistics.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <div class="text-pink-400 mb-4">
+                        <svg class="h-10 w-10 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" fill-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-pink-400">Equipment</h3>
+                    <p class="text-gray-400">Maintaining and upgrading shared instruments, stands, and audio equipment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stripe Pricing Table -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4">Select Your Membership</h2>
+            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">Choose a plan below to complete your dues payment securely through Stripe.</p>
+            <div class="max-w-5xl mx-auto min-h-[400px]" aria-label="Membership plan selection and payment">
+                <stripe-pricing-table pricing-table-id="prctbl_1T5OrcLU3uUbLAud1XTpOgYv"
+                publishable-key="pk_live_51NQZp2LU3uUbLAudMjYahZ7jODoGD0KT65iCqFMC56XBIIQXrKNLnBIuK5cqbpGShA85h30uvEhLrZxpgYab0Ia700YQeOfriF">
+                </stripe-pricing-table>
+            </div>
+            <p class="text-gray-500 text-sm text-center mt-8 max-w-2xl mx-auto">All membership payments are processed as charitable contributions to the Jasmine Field Orchestra and are non-refundable. Your generous support directly funds our rehearsals, performances, and community programs.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="bg-gray-800 rounded-lg">
+                    <summary class="flex items-center p-5 text-lg font-medium">What do membership dues cover?</summary>
+                    <div class="px-5 pb-5 text-gray-300 leading-relaxed">
+                        Dues help fund rehearsal venue bookings, sheet music licensing, concert production, equipment maintenance, and community events. As a student-run organization, membership dues are what keep JFO running each semester.
+                    </div>
+                </details>
+                <details class="bg-gray-800 rounded-lg">
+                    <summary class="flex items-center p-5 text-lg font-medium">Is there a deadline to pay dues?</summary>
+                    <div class="px-5 pb-5 text-gray-300 leading-relaxed">
+                        Dues are typically due within the first few weeks of each semester. Check our <a class="text-pink-400 hover:underline" href="https://news.jfouiuc.org/" target="_blank" rel="noopener noreferrer">News & Announcements</a> page or your division's group chat for the exact deadline each term.
+                    </div>
+                </details>
+                <details class="bg-gray-800 rounded-lg">
+                    <summary class="flex items-center p-5 text-lg font-medium">Can I attend rehearsals before paying?</summary>
+                    <div class="px-5 pb-5 text-gray-300 leading-relaxed">
+                        Yes! New members are welcome to try out a few rehearsals before committing. We want you to feel confident about joining before you pay.
+                    </div>
+                </details>
+                <details class="bg-gray-800 rounded-lg">
+                    <summary class="flex items-center p-5 text-lg font-medium">What if I cannot afford dues?</summary>
+                    <div class="px-5 pb-5 text-gray-300 leading-relaxed">
+                        We never want finances to be a barrier to making music. If you're experiencing financial hardship, please reach out to us at <a class="text-pink-400 hover:underline" href="mailto:hello@jfouiuc.com">hello@jfouiuc.com</a> to discuss options.
+                    </div>
+                </details>
+                <details class="bg-gray-800 rounded-lg">
+                    <summary class="flex items-center p-5 text-lg font-medium">Are membership dues refundable?</summary>
+                    <div class="px-5 pb-5 text-gray-300 leading-relaxed">
+                        Membership dues are treated as charitable contributions to support JFO's mission and are non-refundable. Every dollar goes directly toward keeping our music community thriving — from rehearsal spaces and sheet music to the concerts we share with the UIUC community. That's why we encourage new members to attend a few rehearsals before paying, so you can be sure JFO is the right fit for you.
+                    </div>
+                </details>
+                <details class="bg-gray-800 rounded-lg">
+                    <summary class="flex items-center p-5 text-lg font-medium">Is my payment secure?</summary>
+                    <div class="px-5 pb-5 text-gray-300 leading-relaxed">
+                        Absolutely. All payments are processed through <a class="text-pink-400 hover:underline" href="https://stripe.com" target="_blank" rel="noopener noreferrer">Stripe</a>, a PCI-compliant payment processor trusted by millions of businesses worldwide. JFO never sees or stores your card details.
+                    </div>
+                </details>
+                <details class="bg-gray-800 rounded-lg">
+                    <summary class="flex items-center p-5 text-lg font-medium">Who do I contact with billing questions?</summary>
+                    <div class="px-5 pb-5 text-gray-300 leading-relaxed">
+                        For any questions about your payment or membership status, email us at <a class="text-pink-400 hover:underline" href="mailto:hello@jfouiuc.com">hello@jfouiuc.com</a>.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-black py-10">
+    <div class="container mx-auto px-6 text-center text-gray-400">
+        <p class="mb-4">COPYRIGHT &copy; 2012 - 2026 JFO. ALL RIGHTS RESERVED.</p>
+        <p>Email: <a class="hover:text-pink-400" href="mailto:hello@jfouiuc.com">hello@jfouiuc.com</a></p>
+    </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button')
+  const mobileMenu = document.getElementById('mobile-menu')
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden')
+  })
+
+  // Close mobile menu when a link is clicked
+  const mobileMenuLinks = mobileMenu.querySelectorAll('#mobile-menu a')
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden')
+    })
+  })
+
+  // Change header background on scroll
+  const header = document.getElementById('header')
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('header-scrolled')
+    } else {
+      header.classList.remove('header-scrolled')
+    }
+  })
+</script>
+</body>
+</html>
