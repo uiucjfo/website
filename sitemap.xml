@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jfouiuc.org/membership.html</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jfouiuc.org/charter.html</loc>
     <lastmod>2025-09-05</lastmod>
     <changefreq>yearly</changefreq>
